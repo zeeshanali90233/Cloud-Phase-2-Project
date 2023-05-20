@@ -5,7 +5,6 @@ import { useLocation } from "react-router-dom";
 import { db } from "../Firebase/config";
 import firebase from "firebase/compat/app";
 import { sAdminUser } from "../Pages/SAdminDashboard";
-import { adminUser } from "../Pages/AdminDashboard";
 import { useContext } from "react";
 import TextField from "@mui/material/TextField";
 import Backdrop from "@mui/material/Backdrop";
@@ -16,7 +15,6 @@ import LoadingButton from "@mui/lab/LoadingButton";
 import AddIcon from "@mui/icons-material/Add";
 import SaveIcon from "@mui/icons-material/Save";
 import { styled } from "@mui/system";
-import { staffUser } from "../Pages/StaffDashboard";
 import MuiAlert from "@mui/material/Alert";
 import Snackbar from "@mui/material/Snackbar";
 
@@ -82,7 +80,7 @@ const StudentFeeEdit = ({ isSuperAdmin, isAdmin, isStaff }) => {
   // Changed fee form
   const [feePaidIncrement, setFeePaidIncrement] = useState(0);
   const user = useContext(
-    isSuperAdmin ? sAdminUser : isAdmin ? adminUser : isStaff ? staffUser : ""
+    isSuperAdmin ? sAdminUser: ""
   );
   // Remarks Modal
   const [remarksForm, setRemarksForm] = useState(state.remarks);

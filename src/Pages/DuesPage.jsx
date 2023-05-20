@@ -57,7 +57,7 @@ const DuesPage = ({isSuperAdmin,isAdmin}) => {
 
     
     });
-  }, [fetchRender]);
+  }, [fetchRender,navigate]);
   return (
     <div className="duesSide">
       <div className="title text-center">

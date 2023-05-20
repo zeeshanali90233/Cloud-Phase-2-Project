@@ -14,7 +14,6 @@ import MedicalRecordICON from "../Assets/Logos/MedicalRecordICON.png";
 import AdditionalFilesICON from "../Assets/Logos/AdditionalFilesICON.png";
 import { useContext } from "react";
 import TextField from "@mui/material/TextField";
-import { staffUser } from "../Pages/StaffDashboard";
 
 
 const isObjectEmpty = (objectName) => {
@@ -24,7 +23,7 @@ const isObjectEmpty = (objectName) => {
 const StudentDetail = ({isStaff}) => {
   const { state } = useLocation();
   const [student, setStudent] = useState({});
-  const user=useContext(staffUser);
+  const user="";
   const [enrolledCourses, setEnrolledCourses] = useState([]);
   const navigate = useNavigate();
 

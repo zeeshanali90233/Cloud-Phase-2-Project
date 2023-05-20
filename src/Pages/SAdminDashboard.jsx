@@ -65,7 +65,7 @@ const SAdminDashboard = () => {
     setTimeout(() => {
       getUser();
     }, 1000);
-  }, []);
+  }, [navigate]);
 
   const signOut = () => {
     firebase

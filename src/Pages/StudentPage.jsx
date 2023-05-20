@@ -6,12 +6,11 @@ import firebase from "firebase/compat/app";
 import { useNavigate } from "react-router-dom";
 import AddStudentICON from "../Assets/Logos/AddStudentICON.png";
 import "../Css/StudentPage.css";
-import { staffUser } from "./StaffDashboard";
 import * as XLSX from "xlsx";
 import CSVDownload from "../Assets/Logos/CSVDownload.png";
 
 const StudentPage = ({ isSuperAdmin, isAdmin, isStaff }) => {
-  const staff = useContext(staffUser);
+  const staff = useContext(undefined);
   const [studentData, setStudentData] = useState([]);
   const navigate = useNavigate();
   useEffect(() => {

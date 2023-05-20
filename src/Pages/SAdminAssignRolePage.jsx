@@ -155,7 +155,7 @@ if (!user) {
     fetchTeacher();
     fetchLStaff();
     fetchAdmin();
-  }, []);
+  }, [navigate]);
   return (
     <div className="assignrole-container mt-2 container w-100">
        {/* Success Alert */}

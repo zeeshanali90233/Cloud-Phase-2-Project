@@ -18,7 +18,6 @@ import EnrollStudentICON from "../Assets/Logos/EnrollStudentICON.png";
 import RoughMaterialICON from "../Assets/Logos/RoughMaterialICON.png";
 import CourseAttendence from "./CourseAttendence";
 import TextField from "@mui/material/TextField";
-import { staffUser } from "../Pages/StaffDashboard";
 import CourseAssignment from "./CourseAssignment";
 
 
@@ -36,7 +35,7 @@ const CourseDetails = ({showEditButton,showMaterialDeleteButton,showCreateLectur
   const [showQuizes, setShowQuizes] = useState(false);
   const [showEnrollStudentBox, setShowEnrollStudentBox] = useState(false);
   const [showAddRoughMaterialBox, setShowAddRoughMaterialBox] = useState(false);
-  const staffData=useContext(staffUser || {});
+  const staffData=useContext({}|| {});
   
   // Shows the edit form
   const [editCourse, setEditCourse] = useState(false);

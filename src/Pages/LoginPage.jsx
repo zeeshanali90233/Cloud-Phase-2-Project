@@ -9,7 +9,6 @@ import MuiAlert from "@mui/material/Alert";
 import TextField from "@mui/material/TextField";
 import orgLogo from "../Assets/Logos/organization_Logo.png";
 import LoginGifVid from "../Assets/Images/LoginGifVid.mp4";
-import axios from "axios";
 // MUI MODAL COMPONENT
 import Backdrop from "@mui/material/Backdrop";
 import Box from "@mui/material/Box";
@@ -91,23 +90,6 @@ const LoginPage = ({
     });
   };
 
-  const getResetPasswordLink=(email)=>{
-    axios
-    .post("https://lmsserver.up.railway.app/user/password-reset", {
-      email: email,
-    })
-    .then((res) => {
-      const link = res.data.link;
-      setIsFinding(false);
-      // Open the link in a new tab
-      window.open(link, "_blank");
-    })
-    .catch((err) => {
-      setForgotPasswordForm({ ...forgotPasswordForm, error: true });
-      setIsFinding(false);
-      console.log(err);
-    });
-  }
   // Super Admin Password Reset 
   const handleSuperAdminPasswordReset = (e) => {
     e.preventDefault();

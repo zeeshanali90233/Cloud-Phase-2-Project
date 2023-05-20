@@ -11,7 +11,6 @@ import MuiAlert from "@mui/material/Alert";
 import Avatar from "@mui/material/Avatar";
 import moment from "moment";
 import { useContext } from "react";
-import { adminUser } from "../Pages/AdminDashboard";
 import { sAdminUser } from "../Pages/SAdminDashboard";
 import { isSuperAdminForTransaction } from "../Pages/DuesPage";
 
@@ -32,7 +31,7 @@ const SalaryDisplay = ({ salary }) => {
   const [showSuccessfullyPaidAlert, setShowSuccessfullyAlert] = useState(false);
   const isSuperAdmin = useContext(isSuperAdminForTransaction);
 
-  const user = useContext(isSuperAdmin ? sAdminUser : adminUser);
+  const user = useContext(isSuperAdmin ? sAdminUser : "");
   const handleClose = (event, reason) => {
     if (reason === "clickaway") {
       return;

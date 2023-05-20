@@ -15,6 +15,7 @@ import EmployeeAttendanceICON from "../Assets/Logos/EmployeeAttendanceICON.png";
 import Select from "@mui/material/Select";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
+import {  useNavigate } from "react-router-dom";
 // MUI MODAL COMPONENT
 import Backdrop from "@mui/material/Backdrop";
 import Box from "@mui/material/Box";
@@ -53,6 +54,7 @@ const style = {
 };
 
 const AttendancePage = ({ showAdminAttendance, showStaffAttendance }) => {
+  const navigate=useNavgate();
   const [showAdminAttendanceBox, setShowAdminAttendanceBox] = useState(false);
   const [showAdminCreateAttendanceModal, setShowAdminCreateAttendanceModal] =
     useState(false);
@@ -160,7 +162,7 @@ const AttendancePage = ({ showAdminAttendance, showStaffAttendance }) => {
     fetchAdminData();
     fetchStaffData();
     fetchAttendance();
-  }, []);
+  }, [navigate]);
 
   const handleAdminChange = (e) => {
     e.preventDefault();

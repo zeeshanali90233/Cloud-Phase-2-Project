@@ -8,7 +8,6 @@ import AttendanceICON from "../Assets/Logos/AttendanceICON.png";
 import AdminICON from "../Assets/Logos/AdminICON.png";
 import SalaryPanelICON from "../Assets/Logos/SalaryPanelICON.png";
 import FinancePanelICON from "../Assets/Logos/FinancePanelICON.png";
-import { adminUser } from "../Pages/AdminDashboard";
 
 const Panels = ({
   showCoursePanel,
@@ -21,7 +20,7 @@ const Panels = ({
   isAdmin,
 }) => {
   // For admin and for staff
-  const user = useContext(adminUser);
+  const user ="";
   return (
     <div className="panels w-100 mt-3 flex-wrap mx-2 ps-3 justify-content-evenly d-flex ">
       {/* Course Panel */}

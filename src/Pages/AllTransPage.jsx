@@ -9,10 +9,6 @@ import PrintAllTransactions from "../Components/PrintAllTransactions";
 import firebase from "firebase/compat/app";
 import { useNavigate } from "react-router-dom";
 import CSVDownload from "../Assets/Logos/CSVDownload.png";
-import { adminUser } from "./AdminDashboard";
-import { teacherUser } from "./TeacherDashboard";
-import { studentUser } from "./StudentDashboard";
-import { staffUser } from "./StaffDashboard";
 import Backdrop from "@mui/material/Backdrop";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
@@ -52,17 +48,7 @@ const AllTransPage = ({ isTeacher, isAdmin, isStaff, isStudent }) => {
     });
   };
   const navigate = useNavigate();
-  const userData = useContext(
-    isAdmin
-      ? adminUser
-      : isStaff
-      ? staffUser
-      : isTeacher
-      ? teacherUser
-      : isStudent
-      ? studentUser
-      : ""
-  );
+  const userData = ""
 
   useEffect(() => {
     // Get the currently signed-in user

@@ -32,7 +32,7 @@ const FeesPage = ({isSuperAdmin}) => {
   });
   setStudentFees(postData);
 });
-  }, []);
+  }, [navigate]);
 
 
 
