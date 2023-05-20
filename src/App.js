@@ -26,35 +26,16 @@ import StaffPage from "./Pages/StaffPage";
 import StudentDetail from "./Components/StudentDetail";
 import StudentEdit from "./Components/StudentEdit";
 import AdminDetail from "./Components/AdminDetail";
-import AdminDashboard from "./Pages/AdminDashboard";
 import StaffDetail from "./Components/StaffDetail";
 import TeacherDetail from "./Components/TeacherDetail";
 import AdminEdit from "./Components/AdminEdit";
 import StaffEdit from "./Components/StaffEdit";
 import TeacherEdit from "./Components/TeacherEdit";
-import AssignedRolePagination from "./Components/AssignedRolePagination";
-import AdminAssignRolePage from "./Pages/AdminAssignRolePage";
 import InformationPanels from "./Components/InformationPanels";
 import SuperAdminEditProfile from "./Components/SuperAdminEditProfile";
-import AdminEditProfile from "./Components/AdminEditProfile";
-import TeacherDashboard from "./Pages/TeacherDashboard";
-import TeacherAssignTaskPage from "./Pages/TeacherAssignTaskPage";
-import TeacherEditProfile from "./Components/TeacherEditProfile";
-import TeacherCoursesPage from "./Pages/TeacherCoursesPage";
-import TeacherSalaryPage from "./Pages/TeacherSalaryPage";
-import AdminSalaryPage from "./Pages/AdminSalaryPage";
 import AttendancePage from "./Pages/AttendancePage";
-import StudentDashboard from "./Pages/StudentDashboard";
-import StudentCoursesPage from "./Pages/StudentCoursesPage";
-import StudentAttendancePage from "./Pages/StudentAttendancePage";
-import StudentEditProfile from "./Components/StudentEditProfile";
-import StaffDashboard from "./Pages/StaffDashboard";
-import StaffPanels from "./Components/StaffPanels";
-import StaffAssignRolePage from "./Pages/StaffAssignRolePage";
 import CourseFinancePage from "./Pages/CourseFinancePage";
-import StaffEditProfile from "./Components/StaffEditProfile";
 import DuesEdit from "./Components/DuesEdit";
-import StaffSalaryPage from "./Pages/StaffSalaryPage";
 
 function App() {
   return (
