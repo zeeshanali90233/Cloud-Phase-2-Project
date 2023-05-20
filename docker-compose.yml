@@ -1,7 +1,7 @@
 version: '3'
 services:
   frontend:
-    image: node:14-slim
+    image: node:14-alpine
     working_dir: /app
     volumes:
       - ./:/app
