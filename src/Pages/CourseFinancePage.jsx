@@ -5,12 +5,11 @@ import moment from "moment";
 import LoadingButton from "@mui/lab/LoadingButton";
 import AssessmentIcon from "@mui/icons-material/Assessment";
 import { styled } from "@mui/system";
-import Chart from "chart.js/auto";
 import TextField from "@mui/material/TextField";
 import { Pie } from "react-chartjs-2";
 import FeePagination from "../Components/FeePagination";
 import PrintCourseFinance from "../Components/PrintCourseFinance";
-import PrintSVG from "../Assets/Logos/PrintICON.png";
+import { useNavigate } from "react-router-dom";
 
 const SaveButton = styled(LoadingButton)({
   backgroundColor: "#00233a",
@@ -27,6 +26,7 @@ const CourseFinancePage = () => {
   const [courseFinanceDetail, setCourseFinanceDetail] = useState({
     completed: false,
   });
+  const navigate=useNavigate();
 
   useEffect(() => {
     const getCourses = () => {
@@ -43,7 +43,7 @@ const CourseFinancePage = () => {
     };
 
     getCourses();
-  }, []);
+  }, [navigate]);
 
   const studentFeeLabel = ["Fee Paid", "Fee Not Paid"];
   const studentFeePieChart = {

@@ -27,7 +27,7 @@ const StudentPage = ({ isSuperAdmin, isAdmin, isStaff }) => {
       });
       setStudentData(data);
     });
-  }, []);
+  }, [navigate]);
 
   const downloadData = (studentRecords) => {
     // Reorder the data
