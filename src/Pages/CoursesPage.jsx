@@ -7,11 +7,10 @@ import { useEffect ,useContext} from "react";
 
 import AddCourseICON from "../Assets/Logos/AddCourseICON.png";
 import CoursePagination from "../Components/CoursePagination";
-import { staffUser } from "./StaffDashboard";
 
 const CoursesPage = ({showCourseDeleteBtn,isSuperAdmin,isStaff,isAdmin}) => {
   const [courses, setCourses] = useState([]);
-const staffData=useContext(staffUser||{})
+const staffData=useContext({}||{})
   useEffect(() => {
     return db.collection("courses").onSnapshot((snapshot) => {
       let data = [];
