@@ -20,7 +20,7 @@ RUN npm run build
 
 
 # Expose the desired port (e.g., 3000) for the React app
-EXPOSE 3000
+EXPOSE 8080
 
 # Start the React app using the built files
 CMD ["npm", "start"]
