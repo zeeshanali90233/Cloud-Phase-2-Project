@@ -9,7 +9,5 @@ services:
       - 8080:8080
     command: >
       sh -c "npm start -- --quiet-pull"
-    deploy:
-      resources:
-        limits:
-          memory: 2G
+    environment:
+      - NODE_OPTIONS=--max-old-space-size=4096
