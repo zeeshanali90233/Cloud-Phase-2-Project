@@ -16,5 +16,8 @@ COPY . .
 # Build the Next.js app
 RUN yarn build
 
+# Include the Next.js production build artifacts
+COPY .next ./.next
+
 # Set the command to start the production server
 CMD ["yarn", "start"]
