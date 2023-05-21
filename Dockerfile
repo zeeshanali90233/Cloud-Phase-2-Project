@@ -1,30 +1,20 @@
-# Stage 1: Build stage
-FROM node:14-alpine AS build
+# Base image
+FROM node:14-alpine
 
+# Set working directory
 WORKDIR /app
 
-# Copy package.json and yarn.lock
-COPY package*.json yarn.lock ./
+# Copy package.json and yarn.lock to the working directory
+COPY package.json yarn.lock ./
 
-# Install dependencies using Yarn
-RUN yarn install --production --quiet --frozen-lockfile
+# Install dependencies
+RUN yarn install --frozen-lockfile
 
-# Copy the rest of the project files
+# Copy the entire project directory into the container's working directory
 COPY . .
 
-# Build the React app
+# Build the Next.js app
 RUN yarn build
 
-# Stage 2: Runtime stage
-FROM node:14-alpine AS runtime
-
-WORKDIR /app
-
-# Copy the build folder from the build stage
-COPY --from=build /app/build ./build
-
-# Expose port 3000
-EXPOSE 3000
-
-# Set the command to start the development server
+# Set the command to start the production server
 CMD ["yarn", "start"]
