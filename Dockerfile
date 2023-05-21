@@ -1,5 +1,5 @@
 # Stage 1: Build stage
-FROM node:16-alpine AS build
+FROM node:14-alpine AS build
 
 WORKDIR /app
 
@@ -10,7 +10,7 @@ COPY . .
 RUN npm run build
 
 # Stage 2: Runtime stage
-FROM node:16-alpine AS runtime
+FROM node:14-alpine AS runtime
 
 WORKDIR /app
 
@@ -19,5 +19,5 @@ RUN npm ci --production --quiet
 
 COPY --from=build /app/build ./build
 
-EXPOSE 8080
+EXPOSE 3000
 CMD ["npm", "start"]
