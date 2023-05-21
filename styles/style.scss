@@ -1,0 +1,78 @@
+@import "variables";
+@import "~bootstrap/scss/bootstrap";
+@import "~bootstrap-icons/font/bootstrap-icons.scss";
+@import "./layout/sidebar";
+@import "./layout/container";
+
+
+
+
+  
+
+//  -----------------------------------Home Page Styling --------------------------
+/* Home Page Styling */
+.home-container .header{
+    background-color: #eeeeee;
+  }
+  
+  .home-container .header h1{
+    font-size: 63px;
+  }
+  
+  
+  .login-panel h2{
+    font-size: 18px;
+    color: white;
+  }
+  /* button with hover */
+  .login-panel .super-admin{
+    background-color: var(--darkgrey);
+  }
+  .login-panel .super-admin:hover{
+    background-color: var(--grey);
+  }
+  
+  .login-panel .admin{
+    background-color: var(--blue);
+  }
+  .login-panel .admin:hover{
+    background-color: var(--lightBlue);
+  }
+  
+  .login-panel .teacher{
+    background-color: var(--yellow);
+  }
+  .login-panel .teacher:hover{
+    background-color: var(--darkYellow);
+  }
+
+  .login-panel .staff{
+    background-color: var(--staff);
+  }
+  
+  .login-panel .staff:hover{
+    background-color: var(--staffHover);
+  }
+  
+  .login-panel .student{
+    background-color: var(--darkSkyBlue);
+  }
+  .login-panel .student:hover{
+    background-color: var(--skyBlue);
+  }
+  
+  .footer .text p a{
+    text-decoration: none;
+  }
+  .footer .text p a:hover{
+    text-decoration: underline;
+  }
+
+
+//   -----------------------------------------End--------------------------------
+
+
+
+
+
+

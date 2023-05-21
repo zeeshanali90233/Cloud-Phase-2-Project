@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root{
+    /* without hover */
+    --grey:#393c41;
+    --blue:#00233a;
+    --yellow:#f7bf41;
+    --skyBlue:#337ab7;
+    --staff:rgb(138, 136, 136);
+    /* with hover */
+    --darkgrey:#282a2e;
+    --lightBlue:#024674;
+    --darkYellow:#463100;
+    --darkSkyBlue:#286090;
+    --staffHover:rgb(94, 93, 93);
+  }
+
+
+
+
+
+
