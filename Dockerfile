@@ -17,7 +17,7 @@ RUN npm install --quiet --no-warnings
 
 # Copy the rest of the project files
 COPY . .
-
+ENV NODE_OPTIONS="--max-old-space-size=4096"
 # Build the React app
 RUN npm run build
 
