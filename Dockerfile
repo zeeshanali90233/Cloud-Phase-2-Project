@@ -17,20 +17,20 @@ RUN npm install --quiet --no-warnings
 
 # Copy the rest of the project files
 COPY . .
-ENV NODE_OPTIONS="--max-old-space-size=4096"
-# Build the React app
-RUN npm run build
+
+# Build the React app (assuming it was built locally)
+COPY ./build ./build
 
 # Stage 2: Runtime stage
 FROM node:14-alpine AS runtime
 
 WORKDIR /app
 
-# Copy the build folder
+# Copy the build folder from the build stage
 COPY --from=build /app/build ./build
 
-# Expose port 80
-EXPOSE 80
+# Expose port 3000
+EXPOSE 3000
 
 # Set the command to start the development server
 CMD ["npm", "start"]
