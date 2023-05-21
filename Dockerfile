@@ -3,8 +3,14 @@ FROM node:14-alpine AS build
 
 WORKDIR /app
 
+# Clear npm cache
+RUN npm cache clean --force
+
 # Copy package.json and package-lock.json
 COPY package*.json ./
+
+# Update npm
+RUN npm install --global npm@latest
 
 # Install dependencies and ignore warnings
 RUN npm install --quiet --no-warnings
