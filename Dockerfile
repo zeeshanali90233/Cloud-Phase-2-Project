@@ -7,7 +7,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install dependencies
-RUN npm install --quiet
+RUN npm ci --quiet
 
 # Copy the rest of the project files
 COPY . .
@@ -19,12 +19,6 @@ RUN npm run build
 FROM node:14-alpine AS runtime
 
 WORKDIR /app
-
-# Copy package.json and package-lock.json
-COPY --from=build /app/package*.json ./
-
-# Install only production dependencies
-RUN npm install --production --quiet 
 
 # Copy the build folder
 COPY --from=build /app/build ./build
