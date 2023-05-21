@@ -2,10 +2,18 @@
 FROM node:14-alpine AS build
 
 WORKDIR /app
-COPY package*.json ./
-COPY node_modules ./
-# Copy the build folder from your local repository to the container
-RUN npm run build
+
+# Copy package.json and yarn.lock
+COPY package*.json yarn.lock ./
+
+# Install dependencies using Yarn
+RUN yarn install --production --quiet --frozen-lockfile
+
+# Copy the rest of the project files
+COPY . .
+
+# Build the React app
+RUN yarn build
 
 # Stage 2: Runtime stage
 FROM node:14-alpine AS runtime
@@ -19,4 +27,4 @@ COPY --from=build /app/build ./build
 EXPOSE 3000
 
 # Set the command to start the development server
-CMD ["npm", "start"]
+CMD ["yarn", "start"]
