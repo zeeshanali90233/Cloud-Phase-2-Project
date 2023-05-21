@@ -7,7 +7,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install dependencies and ignore warnings
-RUN npm install --quiet --no-warning
+RUN npm install --quiet --no-warnings
 
 # Copy the rest of the project files
 COPY . .
@@ -24,7 +24,7 @@ WORKDIR /app
 COPY --from=build /app/build ./build
 
 # Expose port 80
-EXPOSE 3000
+EXPOSE 80
 
 # Set the command to start the development server
 CMD ["npm", "start"]
