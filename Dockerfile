@@ -6,8 +6,8 @@ WORKDIR /app
 # Copy package.json and package-lock.json
 COPY package*.json ./
 
-# Install dependencies
-RUN npm install --quiet
+# Install dependencies and ignore warnings
+RUN npm install --quiet --no-warning
 
 # Copy the rest of the project files
 COPY . .
@@ -24,7 +24,7 @@ WORKDIR /app
 COPY --from=build /app/build ./build
 
 # Expose port 80
-EXPOSE 80
+EXPOSE 3000
 
 # Set the command to start the development server
 CMD ["npm", "start"]
