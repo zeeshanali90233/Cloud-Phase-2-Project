@@ -2,9 +2,10 @@
 FROM node:14-alpine AS build
 
 WORKDIR /app
-
+COPY package*.json ./
+COPY node_modules ./
 # Copy the build folder from your local repository to the container
-COPY build ./build
+RUN npm run build
 
 # Stage 2: Runtime stage
 FROM node:14-alpine AS runtime
