@@ -7,7 +7,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install dependencies
-RUN npm install --quiet --force 
+RUN npm install --quiet
 
 # Copy the rest of the project files
 COPY . .
@@ -23,8 +23,8 @@ WORKDIR /app
 # Copy the build folder
 COPY --from=build /app/build ./build
 
-# Expose port 3000
-EXPOSE 3000
+# Expose port 80
+EXPOSE 80
 
-# Set the command to start the app
+# Set the command to start the development server
 CMD ["npm", "start"]
